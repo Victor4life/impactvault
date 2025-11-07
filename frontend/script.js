@@ -129,3 +129,11 @@ function showToast(message, duration = 3000) {
   clearTimeout(toast._timeout);
   toast._timeout = setTimeout(() => (toast.style.opacity = "0"), duration);
 }
+
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+  navbar.classList.toggle("active");
+  menuToggle.textContent = navbar.classList.contains("active") ? "✕" : "☰";
+});
