@@ -115,24 +115,6 @@ header {
   box-shadow: 0 0 15px #00ffc6;
 }
 
-/* 🔹 Responsive (for smaller screens) */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .navbar {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 15px;
-  }
-}
-
 /* ===== MAIN ===== */
 main {
   display: none;
