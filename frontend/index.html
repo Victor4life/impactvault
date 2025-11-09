@@ -21,14 +21,15 @@
     </div>
 
     <!-- ===== HEADER ===== -->
-    <header>
+    <header id="mainHeader">
       <img src="logo.png" alt="ImpactVault Logo" class="header-logo" />
 
+      <!-- Hamburger Menu for Mobile -->
       <button class="menu-toggle" id="menuToggle">☰</button>
 
       <nav class="navbar" id="navbar">
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
+          <li><a href="#" class="active">Home</a></li>
           <li><a href="vaults.html">Vaults</a></li>
           <li><a href="rewards.html">Rewards</a></li>
           <li><a href="community.html">Community</a></li>
@@ -37,7 +38,17 @@
         </ul>
       </nav>
 
-      <button id="connectButton" class="btn connect">🔗 Connect Wallet</button>
+      <div class="wallet-controls">
+        <button id="mockToggle" class="btn mock">🧩 Mock Mode: ON</button>
+        <button id="connectButton" class="btn connect">
+          🔗 Connect Wallet
+        </button>
+      </div>
+
+      <div id="wallet-info" class="wallet-info">
+        <p id="walletAddress">Not Connected</p>
+        <p id="networkStatus">🌐 Network: -</p>
+      </div>
     </header>
 
     <!-- ===== MAIN DASHBOARD ===== -->
@@ -98,6 +109,25 @@
         </div>
       </section>
 
+      <!-- ===== IMPACT METRICS ===== -->
+      <section class="impact-metrics">
+        <h2>🌱 Community Impact</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <h3 id="impactProjects">0</h3>
+            <p>Projects Supported</p>
+          </div>
+          <div class="impact-card">
+            <h3 id="impactDonations">0</h3>
+            <p>Total Donations (mDAI)</p>
+          </div>
+          <div class="impact-card">
+            <h3 id="impactUsers">0</h3>
+            <p>Active Contributors</p>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== FOOTER ===== -->
       <footer>
         © 2025 ImpactVault — Built with 💚 for Octant DeFi Hackathon
@@ -108,6 +138,36 @@
     <div id="statusToast" class="status-toast" style="opacity: 0">
       Status message
     </div>
+
+    <!-- ===== AI CHATBOT WIDGET ===== -->
+    <div id="chatbot-container" class="chatbot-container">
+      <div class="chat-header">
+        <span>💬 ImpactVault Assistant</span>
+        <div>
+          <button
+            id="aiModeToggle"
+            class="toggle-btn"
+            style="border-radius: 50px"
+          >
+            🤖 AI: OFF
+          </button>
+        </div>
+        <button id="closeChat" class="close-chat">×</button>
+      </div>
+      <div id="chatBody" class="chat-body">
+        <div class="bot-msg">
+          Hi there 👋, I’m ImpactVault AI.<br />
+          Ask me anything about deposits, yield, or harvesting!
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+
+    <!-- Floating button -->
+    <button id="chatToggle" class="chat-toggle">💬</button>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
