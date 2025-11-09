@@ -162,6 +162,12 @@ aiModeToggle.onclick = () => {
 // ===== MOCK AI RESPONSES =====
 function getMockResponse(input) {
   input = input.toLowerCase();
+  if (
+    input.includes("how does the deposit work") ||
+    input.includes("how to deposit") ||
+    input.includes("explain deposit")
+  )
+    return "This is a simple DeFi deposit. You deposit DAI and receive mDAI in return, which earns yield over time.";
   if (input.includes("deposit"))
     return "💰 You can deposit mDAI by entering an amount and clicking *Deposit*.";
   if (input.includes("yield"))
@@ -170,9 +176,9 @@ function getMockResponse(input) {
     return "🌿 Harvest sends your simulated yield to public-good projects.";
   if (input.includes("impact"))
     return "🌱 ImpactVault converts DeFi yield into real-world funding for verified projects.";
-  if (input.includes("mock"))
+  if (input.includes("mock") || input.includes("test"))
     return "🧩 Mock mode lets you test without MetaMask.";
-  if (input.includes("hello") || input.includes("hi"))
+  if (input.includes("hello") || input.includes("hi") || input.includes("hey"))
     return "Hey 👋 I'm your ImpactVault assistant!";
   return "🤖 I'm not sure yet — try asking about deposit, yield, or harvest!";
 }
