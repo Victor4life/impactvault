@@ -11,19 +11,35 @@
     />
   </head>
   <body>
-    <header>
+    <!-- ===== HEADER ===== -->
+    <header id="mainHeader">
       <img src="logo.png" alt="ImpactVault Logo" class="header-logo" />
-      <nav class="navbar">
+
+      <!-- Hamburger Menu for Mobile -->
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <nav class="navbar" id="navbar">
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="vaults.html">Vaults</a></li>
-          <li><a href="rewards.html" class="active">Rewards</a></li>
+          <li><a href="rewards.html">Rewards</a></li>
           <li><a href="community.html">Community</a></li>
           <li><a href="docs.html">Docs</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-      <button id="connectButton" class="btn connect">🔗 Connect Wallet</button>
+
+      <div class="wallet-controls">
+        <button id="mockToggle" class="btn mock">🧩 Mock Mode: ON</button>
+        <button id="connectButton" class="btn connect">
+          🔗 Connect Wallet
+        </button>
+      </div>
+
+      <div id="wallet-info" class="wallet-info">
+        <p id="walletAddress">Not Connected</p>
+        <p id="networkStatus">🌐 Network: -</p>
+      </div>
     </header>
 
     <main>
